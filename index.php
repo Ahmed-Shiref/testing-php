@@ -55,7 +55,7 @@ function is_exsist($str)
 */
 
 /*
-function lent($str)
+function strlength($str)
 {
     for ($i = 1; $str[$i] == !""; $i++) {
         $i += 1;
@@ -79,7 +79,7 @@ function lent($str)
     return $length;
 }
 
-echo lent("123456789") . "<br>";
+echo strlen("123456789") . "<br>";
 */
 
 
@@ -87,7 +87,7 @@ echo lent("123456789") . "<br>";
 /*function rev($str)
 {
     $strrev = "";
-    for ($i = lent($str) - 1; $i >= 0; $i--) {
+    for ($i = strlen($str) - 1; $i >= 0; $i--) {
         $strrev = $strrev . $str[$i];
     }
     return $strrev;
@@ -198,3 +198,13 @@ $arr = [54, 78, 2, 65, 7, 1];
 $sortedArray = sort_array_descending($arr);
 print_r($sortedArray);
 */
+echo "command line";
+for ($i = 0; $i = 0; $i++) {
+    echo "$i command line <br>";
+}
+for ($i = 0; $i == 0; $i++) {
+    echo "$i command line <br>";
+}
+for ($i = 0; $i == 1; $i++) {
+    echo "$i command line <br>";
+}

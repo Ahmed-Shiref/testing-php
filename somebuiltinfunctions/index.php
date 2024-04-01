@@ -1,17 +1,16 @@
 <?php echo "<h1 style='text-align: center;'>built in functions</h1>";
 
 
-
 //=========--------------------------------------------------------------------------
 //function transform unindex array to an index array
-function index_array_to_unindex(array $array)
+function unindex_to_index_array(array $array)
 {
     $n = count($array);
     $arrkeys = array_keys($array);
     $revarrkeys = [];
 
     // Reversing the array of keys
-    for ($i = $n - 1; $i >= 0; $i--) {
+    for ($i = 0; $i < $n; $i++) {
         $revarrkeys[] = $arrkeys[$i];
     }
     // Creating the reversed array with reversed keys
@@ -52,10 +51,30 @@ function rev_indexed_array(array $array)
 
 //===========================================================
 
+//------------------------------------------------------------------------------------
+//reverse unindexed array without preserve the key
+function rev_unindex_not_preservekey(array $array)
+{
+    $n = count($array);
+    $arrkeys = array_keys($array);
+    $revarrkeys = [];
 
-//=========--------------------------------------------------------------------------
-//my reverse unindexed array function implementation
-function rev_unindexed_array(array $array)
+    // Reversing the array of keys
+    for ($i = $n - 1; $i >= 0; $i--) {
+        $revarrkeys[] = $arrkeys[$i];
+    }
+    // Creating the reversed array with reversed keys
+    for ($i = 0; $i < $n; $i++) {
+        $revarr[] = $array[$revarrkeys[$i]];
+    }
+    return $revarr;
+}
+//================================================================================
+
+
+//--------------------------------------------------------------------------
+//reverse unindexed array and preserve the key
+function rev_unindexed_array_preservekey(array $array)
 {
     $n = count($array);
     $arrkeys = array_keys($array);
@@ -166,10 +185,10 @@ function rev_allarr(array $array, bool $preserved = false)
     if (is_indexed_keys($array) == true && $preserved == false) {
         return rev_indexed_array($array);
     } elseif (is_indexed_keys($array) == true && $preserved == true) {
-        return rev_unindexed_array($array);
+        return rev_unindexed_array_preservekey($array);
     } elseif (is_indexed_keys($array) == false && $preserved == true) {
-        return rev_unindexed_array($array);
+        return rev_unindexed_array_preservekey($array);
     } elseif (is_indexed_keys($array) == false && $preserved == false) {
-        return rev_unindexed_array($array);
+        return rev_unindexed_array_preservekey($array);
     }
 }
