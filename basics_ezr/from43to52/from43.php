@@ -11,11 +11,11 @@ echo "<br>";
 echo "video (43)";
 echo "<br>";
 
-    echo "<form action='' method='post'>"    ///myselfffffffffffff
-        . "<lable for 'someone'> enter your user name</lable> <br>"
-        . "<input type='text' name='someone'>"
-        . "<input type='submit' value='submit'>"
-        . "</form>";
+echo "<form action='' method='post'>"    ///myselfffffffffffff
+    . "<lable for 'someone'> enter your user name</lable> <br>"
+    . "<input type='text' name='someone'>"
+    . "<input type='submit' value='submit'>"
+    . "</form>";
 function say_hello_to($someone)
 {
     echo "Hello $someone <br>";
@@ -87,15 +87,6 @@ function get_number($num1, $num2)
 */
 ?>
 
-
-
-
-<!--IMPORTANT START FROM HERE ===========================-->
-
-
-
-
-
 <?php
 ////////////////////video 46 ///////////
 ////////  function
@@ -126,11 +117,10 @@ echo get_data(address: "cairo"); // echo address only
 ////////////////////video 47 ///////////
 ////// function 
 //variable arguments list
-//func_num_args()//it consider the array as 1 arg 
-//but if you spread (...$arr) the array it will consider it by the number of args in the array 
+//func_num_args()
 //func_get_arg(index)
 //func_get_args()
-//spread syntax //this will collect every arg in array $nums
+//spread syntax in JS
 
 /*
 echo "<br>";
@@ -148,26 +138,7 @@ function calculate($num1, $num2, $num3, $num4, $num5)
     return $result;
 }*/
 
-///////////////////   spread syntax ////////////////////////
-/*
-function ar($rr) 
-// if{(...$rr)}and{ar($rr)}  ---- type($rr)is array  
-// if{($rr)}and{ar($rr)}  ---- type($rr)is array 
-// if{($rr)}and{ar(...$rr)} ---- type($rr)is string   
-// if{($rr)}and{ar(...$rr)} ---- type($...rr)is array   
-{
-    echo "<pre>";
-    print_r($rr);
-    echo "<br>";
-    echo "type of \$arr is  " . gettype($rr);
-    echo "</pre>";
-}
-$rr = ["pw", 2, "uu", 7];
-ar(...$rr);
-*/
-
-////////////////////
-
+///////////////////spread syntax 
 /*function calculate(...$nums) //this will collect every arg in array $nums
 {
     // echo "index number 3 = " . $nums[3] . "<br>";
