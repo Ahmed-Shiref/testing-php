@@ -198,13 +198,59 @@ $arr = [54, 78, 2, 65, 7, 1];
 $sortedArray = sort_array_descending($arr);
 print_r($sortedArray);
 */
-echo "command line";
-for ($i = 0; $i = 0; $i++) {
-    echo "$i command line <br>";
+
+
+
+
+
+
+include("functions.php");
+function myaarray_pop(array &$array)
+{
+    $indexed_array = unindex_to_index_array($array);
+    $new_array = [];
+    $array_keys = array_keys($array);
+    if (empty($array)) {
+        $array = [];
+    } else {
+        $pop_element = $array[end($array_keys)];
+
+        for ($i = 0; $i < count($array) - 1; $i++) {
+            $new_array[$array_keys[$i]] = $indexed_array[$i];
+        }
+        $array = $new_array;
+        return $pop_element;
+    }
 }
-for ($i = 0; $i == 0; $i++) {
-    echo "$i command line <br>";
+
+
+
+$array = ["ra" => "A", "B", "C", "D"];
+
+// $array = [];
+echo "<pre>";
+print_r(array_pop($array));
+print_r(myaarray_pop($array));
+print_r($array);
+echo "</pre>";
+
+$chars = ["A", "B", "C", "D"];
+function myaarray_unshift(array &$array, ...$elements) //elements type is array
+{
+    $new_array = [];
+    $x = count($elements);
+    $n = count($array);
+    $new_arr_count = $x + $n;
+    for ($i = 0; $i < $x; $i++) {
+        $new_array[$i] = $elements[$i];
+    }
+    for ($i = $x, $s = 0; $i < $new_arr_count, $s < $n; $i++, $s++) {
+        $new_array[$i] = $array[$s];
+    }
+    $array = $new_array;
+    return $new_array;
 }
-for ($i = 0; $i == 1; $i++) {
-    echo "$i command line <br>";
-}
+
+// echo "<pre>";
+// print_r(myarray_unshift($chars));
+// echo "<pre>";
