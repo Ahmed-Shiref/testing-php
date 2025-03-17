@@ -203,7 +203,7 @@ print_r($sortedArray);
 
 
 
-
+/*
 include("functions.php");
 function myaarray_pop(array &$array)
 {
@@ -214,7 +214,7 @@ function myaarray_pop(array &$array)
         $array = [];
     } else {
         $pop_element = $array[end($array_keys)];
-
+        
         for ($i = 0; $i < count($array) - 1; $i++) {
             $new_array[$array_keys[$i]] = $indexed_array[$i];
         }
@@ -254,3 +254,81 @@ function myaarray_unshift(array &$array, ...$elements) //elements type is array
 // echo "<pre>";
 // print_r(myarray_unshift($chars));
 // echo "<pre>";
+*/
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        height: 50%;
+        background-color: yellow;
+    }
+
+    table {
+        background-color: aquamarine;
+        width: 100%;
+        height: 100%;
+    }
+
+    tr,
+    td {
+        width: 10%;
+        height: 20%;
+        background-color: antiquewhite;
+    }
+</style>
+
+<body>
+    <div style=' width:50%;height:50%; background-color:yellow;'>
+
+        <form action="" method="get">
+            <table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+            </table>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
+
+<?php
+
+
+
+
+
+?>
+<!-- 
+
+    -->

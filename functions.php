@@ -221,6 +221,28 @@ function strlength($str)
 
 
 //------------------------------------------
+function rev_str_word(string $text)
+{
+    //1- split into world in array 
+    //2- loop on every element 
+    //3- add the reversed words in one string variable
+    $text = trim($text);
+    $result = "";
+    $splitstring = explode(" ", ($text));
+    foreach ($splitstring as $word) {
+        $result .= " " . strrev($word);
+    }
+    return $result;
+}
+//===========================================================================================
+
+
+//------------------------------------------
+
+//===========================================================================================
+
+
+//------------------------------------------
 function rev($str)
 {
     $strrev = "";
@@ -232,7 +254,18 @@ function rev($str)
 //===========================================================================================
 
 //------------------------------------------
+function reverseWords(string $text)
+{
+    $text          = trim($text);
+    $words         = explode(' ', $text);
+    $reversedWords = [];
 
+    for ($i = (count($words) - 1); $i >= 0; $i--) {
+        $reversedWords[] = $words[$i];
+    }
+
+    return implode(' ', $reversedWords);
+}
 //===========================================================================================
 
 //------------------------------------------
@@ -582,5 +615,25 @@ function myarray_unshift(array &$array, ...$elements) //elements type is array
     }
     $array = $new_array;
     return $new_array;
+}
+//===========================================================================================
+
+//---------------------------------------------------------
+function binarysearch1($arr, $target)
+{
+    $left = 0;
+    $right = count($arr) - 1;
+    while ($left <= $right) {
+        $mid = floor(($left + $right) / 2);
+        echo "(left=$left) <br> (right=$right) <br> (mid=$mid)<br><br> <br>  ";
+        if ($arr[$mid] == $target) {
+            return $mid;
+        } elseif ($arr[$mid] < $target) {
+            $left = $mid + 1;
+        } else {
+            $right = $mid - 1;
+        }
+    }
+    return -1;
 }
 //===========================================================================================
